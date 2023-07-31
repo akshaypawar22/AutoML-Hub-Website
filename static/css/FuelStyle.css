@@ -1,0 +1,103 @@
+.bg {
+  background-color: rgb(0, 0, 0);
+}
+ul {
+  list-style-type: none;
+  padding: 6px;
+  overflow: hidden;
+  background-color: #2c3e50;
+  margin-right: 3vw;
+  height: 12vh;
+  margin-top: -1.2vh;
+  margin-left: -1vw;
+  margin-right: -0.5vw;
+}
+.titname {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #33333300;
+  margin-right: 3vw;
+}
+li {
+  float: right;
+  font-size: 20px;
+}
+.titlename {
+  position: absolute;
+  float: left;
+  margin-left: -97vw;
+  width: 270px;
+  margin-top: -15vh;
+}
+li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 13px 16px;
+  text-decoration: none;
+  margin-top: 2vh;
+  margin-right: 1vw;
+}
+
+li a:hover {
+  background-color: #324d67;
+}
+h1 {
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: "Lucida Sans";
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 65vh;
+}
+.main {
+  display: flex;
+}
+label {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Lucida Sans";
+}
+.input {
+  width: 300px;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: rgb(238, 238, 238);
+  border: none;
+}
+.G1 {
+  margin-left: 11vw;
+  margin-top: 40px;
+}
+.G2 {
+  margin-left: 7vw;
+  margin-top: 40px;
+}
+.button1 {
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-top: 30px;
+  background-color: #ffbf00;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  border: none;
+}
+.output {
+  background-color: #ffbf00;
+  color: white;
+  text-align: center;
+  padding: 1px 1px;
+  font-size: 25px;
+  margin-top: 5vh;
+}

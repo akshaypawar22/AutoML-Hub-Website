@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../static/logo3.png" type="image/icon type">
+  <link rel="stylesheet" type="text/css" href="../static/css/LoanStyle.css">
+  <title>Car Loan</title>
+</head>
+
+<body style="background-color: whitesmoke;">
+  <div class="bg">
+    <div class="navbar">
+      <ul>
+        <li><img class="titlename" src="../static/logo2.png" alt=""></li>
+        <li><a href="/About">ABOUT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="/">HOME</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-header" style="text-align: center">
+    <h1>Loan Approval Prediction Model</h1>
+  </div>
+
+  <div class="card">
+    <form class="form-horizontal" action="{{ url_for('predict')}}" method="post">
+      <div class="main">
+        <div class="G1">
+
+          <div>
+            <label><b>Your Income:</b> </label><br>
+            <input class="input" type="text" name="ApplicantIncome" placeholder="Your Income" required="required" />
+          </div>
+
+
+          <div class="form-group">
+            <label><b>Co-applicant(garantor)Income:</b> </label><br>
+            <input class="input" type="text" name="CoaplicantIncome" placeholder="Co-applicant(garantor)Income"
+              required="required" />
+          </div>
+
+          <div class="form-group">
+            <label><b>Loan Amount:</b> </label><br>
+            <input class="input" type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
+          </div>
+
+          <div class="form-group">
+            <label><b>Loan Amount Term:</b> </label><br>
+            <select class="input" type="number" name="Loan_Amount_Term" required="required">
+              <option value="0">loan term:</option>
+              <option value="240">6 months</option>
+              <option value="360">12 months</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="G2">
+          <div class="form-group">
+            <label><b>Credit History:</b> </label><br>
+            <select class="input" type="number" name="Credit_History" required="required">
+              <option value="0">Credit History:</option>
+              <option value="1">yes</option>
+              <option value="0">no</option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+            <label><b>Self Employed:</b> </label><br>
+            <select class="input" type="number" name="Self_Employed" required="required">
+              <option value="0">Self Employed:</option>
+              <option value="1">yes</option>
+              <option value="0">no</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><b>Dependents:</b> </label><br>
+            <select class="input" type="number" name="Dependents" required="required">
+              <option value="0">Dependents:</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3+</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="G3">
+          <div class="col-sm-10">
+            <label><b>Property Area:</b> </label><br>
+            <select class="input" type="number" name="Property_Area" required="required">
+              <option value="0">Locality:</option>
+              <option value="2">urban</option>
+              <option value="1">semiurban</option>
+              <option value="0">rural</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><b>Married:</b> </label><br>
+            <select class="input" type="number" name="Married" required="required">
+              <option value="0">Married:</option>
+              <option value="1">yes</option>
+              <option value="0">no</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><b>Education:</b> </label><br>
+            <select class="input" type="number" name="Education" required="required">
+              <option value="0">Education:</option>
+              <option value="1">Graduate</option>
+              <option value="0">not Graduate</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><b>Gender:</b> </label><br>
+            <select class="input" type="number" name="Gender" required="required">
+              <option value="0">Gender:</option>
+              <option value="1">male</option>
+              <option value="0">female</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="button1">PREDICT</button>
+      </div>
+    </form>
+  </div>
+  <br>
+  <center class="output">
+    <b>
+      <h2>{{ prediction_text}}</h2>
+    </b>
+  </center>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Insurance Fraud</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="../static/logo3.png" type="image/icon type">
+    <link href='h
+  ttps://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body style="background-color: whitesmoke;">
+    <div class="bg">
+        <div class="navbar">
+            <ul>
+                <li><img class="titlename" src="../static/logo2.png" alt=""></li>
+                <li><a href="/About">ABOUT</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/">HOME</a></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Auto Insurance Fraud Detection</h1>
+    <!-- Main Input For Receiving Query to our ML -->
+    <div class="card">
+        <form action="{{ url_for('predictFraud')}}" method="post">
+            <div class="main">
+                <div class="m1">
+                    <label for="insured_sex">Insured sex: </label><br>
+                    <select name="insured_sex" id="insured_sex" class="input" required="required">
+                        <option value=0>FEMALE</option>
+                        <option value=1>MALE</option>
+                    </select><br>
+
+                    <label for="insured_occupation">Insured occupation: </label>
+                    <select name="insured_occupation" id="insured_occupation" class="input" required="required">
+                        <option value=0>adm-clerical</option>
+                        <option value=1>armed-forces</option>
+                        <option value=2>craft-repair</option>
+                        <option value=3>exec-managerial</option>
+                        <option value=4>farming-fishing</option>
+                        <option value=5>handlers-cleaners</option>
+                        <option value=6>machine-op-inspct</option>
+                        <option value=7>other-service</option>
+                        <option value=8>priv-house-serv</option>
+                        <option value=9>prof-specialty</option>
+                        <option value=10>protective-serv</option>
+                        <option value=11>sales</option>
+                        <option value=12>tech-support</option>
+                        <option value=13>transport-moving</option>
+                    </select><br>
+
+                    <label for="insured_hobbies">Insured hobbies:</label><br>
+                    <select name="insured_hobbies" id="insured_hobbies" class="input" required="required">
+                        <option value=2>other</option>
+                        <option value=0>chess</option>
+                        <option value=1>cross-fit</option>
+                        <option value=3>Swimming</option>
+                        <option value=4>Painting</option>
+                    </select><br>
+
+                    <label for="capital_gains">Capital gains</label>
+                    <input type="text" id="capital_gains" name="capital_gains" class="input" required="required"><br>
+
+                    <label for="capital_loss">Capital loss</label>
+                    <input type="text" id="capital_loss" name="capital_loss" class="input" required="required"><br>
+
+                </div>
+                <div class="m2">
+
+                    <label for="incident_type">Incident type</label><br>
+                    <select name="incident_type" id="incident_type" class="input" required="required">
+                        <option value=0>Multi-vehicle Collision</option>
+                        <option value=2>Single Vehicle Collision</option>
+                        <option value=3>Vehicle Theft</option>
+                        <option value=1>Parked Car</option>
+                    </select><br>
+
+                    <label for="collision_type">Collision type</label><br>
+                    <select name="collision_type" id="collision_type" class="input" required="required">
+                        <option value=2>Rear Collision</option>
+                        <option value=3>Side Collision</option>
+                        <option value=1>Front Collision</option>
+                        <option value=0>Other</option>
+                    </select><br>
+
+                    <label for="incident_severity">Incident severity</label><br>
+                    <select name="incident_severity" id="incident_severity" class="input" required="required">
+                        <option value=0>Major Damage</option>
+                        <option value=1>Minor Damage</option>
+                        <option value=2>Total Loss</option>
+                        <option value=3>Trivial Damage</option>
+                    </select><br>
+
+                    <label for="authorities_contacted">Authorities contacted</label><br>
+                    <select name="authorities_contacted" id="authorities_contacted" class="input" required="required">
+                        <option value=0>Ambulance</option>
+                        <option value=4>Police</option>
+                        <option value=1>Fire</option>
+                        <option value=3>Other</option>
+                        <option value=2>None</option>
+                    </select><br>
+
+                    <label for="incident_hour_of_the_day">Incident hour of the day</label>
+                    <input type="number" id="incident_hour_of_the_day" name="incident_hour_of_the_day" class="input"
+                        required="required"><br>
+
+                    <label for="number_of_vehicles_involved">Number of vehicles involved</label>
+                    <input type="number" id="number_of_vehicles_involved" name="number_of_vehicles_involved"
+                        class="input" required="required"><br>
+
+                </div>
+                <div class="m3">
+
+                    <label for="witnesses">Witnesses</label><br>
+                    <input type="number" id="witnesses" name="witnesses" class="input" required="required"><br>
+
+                    <label for="total_claim_amount">Total claim amount</label><br>
+                    <input type="text" id="total_claim_amount" name="total_claim_amount" class="input"
+                        required="required"><br>
+
+                    <label for="age_group">Age group</label><br>
+                    <select name="age_group" id="age_group" class="input" required="required">
+                        <option value=0>15-20</option>
+                        <option value=1>21-25</option>
+                        <option value=2>26-30</option>
+                        <option value=3>31-35</option>
+                        <option value=4>36-40</option>
+                        <option value=5>41-45</option>
+                        <option value=6>46-50</option>
+                        <option value=7>51-55</option>
+                        <option value=8>56-60</option>
+                        <option value=9>61-65</option>
+                    </select>
+
+                    <label for="months_as_customer_groups">Months as customer groups</label><br>
+                    <select name="months_as_customer_groups" id="months_as_customer_groups" class="input"
+                        required="required">
+                        <option value=0>0-50</option>
+                        <option value=9>51-100</option>
+                        <option value=1>101-150</option>
+                        <option value=2>151-200</option>
+                        <option value=3>201-250</option>
+                        <option value=4>251-300</option>
+                        <option value=5>301-350</option>
+                        <option value=6>351-400</option>
+                        <option value=7>401-450</option>
+                        <option value=8>451-500</option>
+                    </select>
+                    <br>
+                    <label for="policy_annual_premium_groups">Policy annual premium groups</label>
+                    <select name="policy_annual_premium_groups" id="policy_annual_premium_groups" class="input"
+                        required="required">
+                        <option value=3>very high</option>
+                        <option value=0>high</option>
+                        <option value=2>medium</option>
+                        <option value=1>low</option>
+                        <option value=4>very low</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="button1">PREDICT</button>
+        </form>
+    </div>
+    <h3 class="output">{{ prediction_text }}</h3>
+</body>
+
+</html>

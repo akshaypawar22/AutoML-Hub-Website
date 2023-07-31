@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../static/logo3.png" type="image/icon type">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <title>Auto Insurance</title>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="navbar">
+      <ul>
+        <li><img class="titlename" src="../static/logo2.png" alt=""></li>
+        <li><a href="/About">ABOUT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="/">HOME</a></li>
+        <div class="dropdown">
+          <span class="droptext">SERVICES</span>
+          <div class="dropdown-content">
+            <a class="droplink" href="/fraud">Auto Insurance Fraud Detection</a>
+            <a class="droplink" href="/CarPrice">Car Price Prediction</a>
+            <a class="droplink" href="/CarLoan">Car Loan Status Prediction</a>
+            <a class="droplink" href="/Fuel">Fuel Efficiency Prediction</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <br>
+    <div class="carhero">
+      <h1 class="maintext">No Speed Limits on our Service</h1>
+      <button class="button button5" onClick="document.getElementById('middle').scrollIntoView();">Let's Start</button>
+    </div>
+  </div>
+  <div class="middle" id="middle">
+    <h1 class="midtitle">SERVICES</h1>
+    <div class="cardelements">
+      <div class="card">
+        <img src="../static/fraud-alert.png" alt="Denim Jeans" style="width:30%">
+        <h1>Auto Insurance Fraud Detection</h1>
+        <p class="price">Fraud detection is a set of activities undertaken to prevent money or property from being
+          obtained through false pretenses.
+          Fraud detection is applied to many industries such as banking or insurance.</p>
+        <p><a class="cardlink" href="/fraud">Auto Insurance Fraud Detection</a></p>
+      </div>
+      <div class="card">
+        <img src="../static/price-tag.png" alt="Denim Jeans" style="width:30%">
+        <h1>Car Price Prediction</h1>
+        <p class="price">Price prediction uses an algorithm to analyze a product or service based on its
+          characteristics, demand, and current market trends.</p>
+        <p><a class="cardlink" href="/CarPrice">Car Price Prediction</a></p>
+      </div>
+      <div class="card">
+        <img src="../static/signing.png" alt="Denim Jeans" style="width:30%">
+        <h1>Car Loan Status Prediction</h1>
+        <p class="price">loan prediction involves the lender looking at various background information about the
+          applicant and deciding whether the bank should grant the loan. Parameters like credit score, loan amount,
+          lifestyle, career, and assets are the deciding factors in getting the loan approved. </p>
+        <p><a class="cardlink" href="/CarLoan">Car Loan Status Prediction</a></p>
+      </div>
+    </div>
+    <div class="cardelements">
+      <div class="card" style="margin-left: 20vw;">
+        <img src="../static/gas-pump.png" alt="Denim Jeans" style="width:30%">
+        <h1>Fuel Efficiency Prediction</h1>
+        <p class="price">fuel efficiency is defined as a measure of how much a car will convert energy in fuel into
+          kinetic energy to travel. i.e Mileage</p>
+        <p><a class="cardlink" href="/Fuel">Fuel Efficiency Prediction</a></p>
+      </div>
+      <div class="card" style="margin-right: 20vw;">
+        <img src="../static/maintenance.png" alt="Denim Jeans" style="width:30%">
+        <h1>Machine Learning (ML) Blogs</h1>
+        <p class="price">The following data dataset is having the latest information about cars in the Indian market.
+          The dataset contains cars with their variants, In the dataset there are 1200+ models/variants
+          to study.</p>
+        <p><a class="cardlink" href="/Blogs">Machine Learning (ML) Blogs</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-basic">
+      <footer>
+        <p class="copyright">Company Akshay_Pawar © 2023</p>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>

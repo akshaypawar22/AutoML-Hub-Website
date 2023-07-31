@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/logo3.png" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="../static/css/FuelStyle.css">
+    <title>Fuel Efficiency Prediction</title>
+</head>
+
+<body style="background-color: whitesmoke;">
+    <div class="bg">
+        <div class="navbar">
+            <ul>
+                <li><img class="titlename" src="../static/logo2.png" alt=""></li>
+                <li><a href="/About">ABOUT</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/">HOME</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-header" style="text-align: center">
+        <h1>Fuel Efficiency Prediction</h1>
+    </div>
+
+    <div class="card">
+        <form action="{{ url_for('FuelResult') }}" method="post">
+            <div class="main">
+                <div class="G1">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="cylinders">Enter no. of cylinders</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <!-- <input type="text" class="input" id="cylinders" name="cylinders"
+                                 required="required"> -->
+                            <select name="cylinders" id="cylinders" class="input" required="required"
+                                placeholder="Number of cylinders">
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=8>8</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="Displacement">Enter Total Displacement</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="input" id="displacement" name="displacement"
+                                placeholder="Displacement in Meter(m)" required="required">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="trestbps">Horsepower </label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="input" id="horsepower" name="horsepower"
+                                placeholder="Total horsepower" required="required">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="weight">Total Weight </label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="input" id="weight" name="weight" placeholder="Car Weight in lbs"
+                                required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="G2">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="acceleration">Acceleration</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="input" id="acceleration" name="acceleration"
+                                placeholder="0 to 100 in Seconds(s)" required="required">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="model_year">Enter the Model Year </label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="input" id="model_year" name="model_year"
+                                placeholder="(Last2 digits of Year only: ex- 70)" required="required">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="origin">Enter the Origin no.</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <select name="origin" id="origin" class="input" required="required" placeholder="Origin">
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <button type="submit" class="button1" value="submit">PREDICT</button>
+            </center>
+        </form>
+    </div>
+    <div class="output">
+        <b>
+            <h2>{{ FuelPrediction_text }}</h2>
+        </b>
+    </div>
+</body>
+
+</html>

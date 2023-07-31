@@ -1,0 +1,182 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+.bg {
+  /* The image used */
+  background-image: url("../hero.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.carhero {
+  background-color: rgba(59, 59, 59, 0.79);
+  height: 100vh;
+  text-align: center;
+  margin-top: -13vh;
+}
+.maintext {
+  position: absolute;
+  margin-top: 40vh;
+  margin-left: 30vw;
+  font-size: 40px;
+  color: white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 6px;
+  overflow: hidden;
+  background-color: #ffffff00;
+  margin-right: 3vw;
+}
+.titname {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #33333300;
+  margin-right: 3vw;
+}
+li {
+  float: right;
+  font-size: 20px;
+}
+.titlename {
+  position: absolute;
+  float: left;
+  margin-left: -93vw;
+  width: 300px;
+  margin-top: -17vh;
+}
+.titlename:hover {
+  text-decoration: none;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 13px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgba(0, 0, 0, 0.419);
+}
+.middle {
+  height: 150vh;
+}
+.midtitle {
+  text-align: center;
+  font-size: 40px;
+}
+.cardelements {
+  display: flex;
+  margin-top: 7vh;
+}
+.card {
+  /* border: 2px solid black; */
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  padding: 15px;
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.cardlink {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #000000;
+}
+.cardlink:hover {
+  color: red;
+  text-decoration: none;
+}
+.price {
+  color: grey;
+  font-size: 12px;
+}
+.footer-basic {
+  padding: 30px 0;
+  background-color: #000000;
+  color: #4b4c4d;
+}
+
+.footer-basic .copyright {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+.button {
+  position: absolute;
+  margin-top: 50vh;
+  margin-left: -7vw;
+  font-size: 40px;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button5 {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  width: 200px;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  margin-left: 61vw;
+  margin-top: 14px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e5e5e5fc;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 250px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content :hover {
+  background-color: #aaa;
+}
+.droplink {
+  font-size: 17px;
+  display: block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 5px;
+}
+.droptext {
+  font-size: 20px;
+  display: block;
+  color: white;
+}
